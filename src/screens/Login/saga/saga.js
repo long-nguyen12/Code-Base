@@ -7,7 +7,11 @@ import {
 } from "../../../epics-reducers/services/userServices";
 import * as navigationService from "../../../epics-reducers/navigationServices";
 import LoadingService from "../../../components/Loading/LoadingService";
-import { userInfoRoutine, userLoginRoutine } from "./routines";
+import {
+    userInfoRoutine,
+    userLoginRoutine,
+    userLogoutRoutine,
+} from "./routines";
 
 export function* loginAction(action) {
     try {
@@ -23,12 +27,18 @@ export function* loginAction(action) {
         }
         LoadingService.hide();
     } catch (err) {
-        console.log(err);
         LoadingService.hide();
         yield put(userLoginRoutine.failure(err));
     }
 }
 
+export function* logoutAction(action) {
+    console.log("here");
+    yield put(userLogoutRoutine.success());
+    navigationService.replace(ROUTES.APP_AUTH);
+}
+
 export default function* authSaga() {
     yield takeLeading(userLoginRoutine.TRIGGER, loginAction);
+    yield takeLeading(userLogoutRoutine.TRIGGER, logoutAction);
 }

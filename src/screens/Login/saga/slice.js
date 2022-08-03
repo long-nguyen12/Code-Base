@@ -2,7 +2,7 @@ import { REHYDRATE } from "redux-persist";
 import { SECURE_KEY } from "../../../constants/app";
 import { createSlice } from "@reduxjs/toolkit";
 import * as tokenService from "../../../epics-reducers/tokenServices";
-import { userLoginRoutine } from "./routines";
+import { userLoginRoutine, userLogoutRoutine } from "./routines";
 
 const initialState = {
     me: null,
@@ -20,12 +20,16 @@ const authSlice = createSlice({
     extraReducers: {
         [REHYDRATE]: (state, action) => {
             if (action.key === SECURE_KEY) {
-                tokenService.setToken(action.payload.me.token);
+                if (action.payload)
+                    tokenService.setToken(action.payload.me.token);
             }
         },
         [userLoginRoutine.SUCCESS]: (state, action) => {
-            console.log(action.payload, "userLoginRoutine");
             state.me = action.payload;
+        },
+        [userLogoutRoutine.SUCCESS]: (state, action) => {
+            state.me = null;
+            tokenService.clearToken();
         },
     },
 });

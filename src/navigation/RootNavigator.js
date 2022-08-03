@@ -1,31 +1,28 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { NavigationContainer } from "@react-navigation/native";
 import {
     createStackNavigator,
     TransitionPresets,
 } from "@react-navigation/stack";
 import React from "react";
 import {
-    FORGOTPASSWORD_PAGE,
+    CAUHOI_PAGE,
     HOME_PAGE,
-    LOGIN_PAGE,
+    LICHHEN_PAGE,
     MAIN,
-    REGISTER_PAGE,
     SETTING_PAGE,
+    THONGBAO_PAGE,
 } from "../constants/routes";
 import HomePage from "../screens/Home";
-import LoginPage from "../screens/Login";
-import ForgotPasswordPage from "../screens/Login/ForgotPassword";
-import RegisterPage from "../screens/Login/Register";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import {
-    HELPER_LINK_TEXT,
     INSTRUCTION_TEXT,
     PRIMARY,
 } from "../constants/colors";
 import { Text } from "@ui-kitten/components";
 import SettingsPage from "../screens/Settings";
-
+import ThongbaoPage from "../screens/Thongbao";
+import Lichhen from "../screens/Lichhen";
+import CauhoiPage from "../screens/Cauhoi";
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -43,7 +40,7 @@ function MainTabBar() {
                     tabBarIcon: ({ focused, color, size }) => {
                         return (
                             <Ionicons
-                                name="ios-home-outline"
+                                name="ios-home"
                                 size={size}
                                 color={focused ? PRIMARY : INSTRUCTION_TEXT}
                             />
@@ -66,13 +63,13 @@ function MainTabBar() {
                 }}
             />
             <Tab.Screen
-                name={SETTING_PAGE}
-                component={SettingsPage}
+                name={LICHHEN_PAGE}
+                component={Lichhen}
                 options={{
                     tabBarIcon: ({ focused, color, size }) => {
                         return (
                             <Ionicons
-                                name="ios-settings-outline"
+                                name="ios-calendar"
                                 size={size}
                                 color={focused ? PRIMARY : INSTRUCTION_TEXT}
                             />
@@ -88,7 +85,94 @@ function MainTabBar() {
                                         : INSTRUCTION_TEXT,
                                 }}
                             >
-                                Cài đặt
+                                Lịch hẹn
+                            </Text>
+                        );
+                    },
+                }}
+            />
+            <Tab.Screen
+                name={CAUHOI_PAGE}
+                component={CauhoiPage}
+                options={{
+                    tabBarIcon: ({ focused, color, size }) => {
+                        return (
+                            <Ionicons
+                                name="ios-chatbubbles"
+                                size={size}
+                                color={focused ? PRIMARY : INSTRUCTION_TEXT}
+                            />
+                        );
+                    },
+                    tabBarLabel: (props) => {
+                        return (
+                            <Text
+                                style={{
+                                    fontSize: 11,
+                                    color: props.focused
+                                        ? PRIMARY
+                                        : INSTRUCTION_TEXT,
+                                }}
+                            >
+                                Hỏi đáp
+                            </Text>
+                        );
+                    },
+                }}
+            />
+            <Tab.Screen
+                name={THONGBAO_PAGE}
+                component={ThongbaoPage}
+                options={{
+                    tabBarIcon: ({ focused, color, size }) => {
+                        return (
+                            <Ionicons
+                                name="ios-notifications"
+                                size={size}
+                                color={focused ? PRIMARY : INSTRUCTION_TEXT}
+                            />
+                        );
+                    },
+                    tabBarLabel: (props) => {
+                        return (
+                            <Text
+                                style={{
+                                    fontSize: 11,
+                                    color: props.focused
+                                        ? PRIMARY
+                                        : INSTRUCTION_TEXT,
+                                }}
+                            >
+                                Thông báo
+                            </Text>
+                        );
+                    },
+                }}
+            />
+            <Tab.Screen
+                name={SETTING_PAGE}
+                component={SettingsPage}
+                options={{
+                    tabBarIcon: ({ focused, color, size }) => {
+                        return (
+                            <Ionicons
+                                name="ios-person"
+                                size={size}
+                                color={focused ? PRIMARY : INSTRUCTION_TEXT}
+                            />
+                        );
+                    },
+                    tabBarLabel: (props) => {
+                        return (
+                            <Text
+                                style={{
+                                    fontSize: 11,
+                                    color: props.focused
+                                        ? PRIMARY
+                                        : INSTRUCTION_TEXT,
+                                }}
+                            >
+                                Tài khoản
                             </Text>
                         );
                     },

@@ -10,3 +10,9 @@ export const MAIN = "MAIN";
 export const HOME_PAGE = "HOME_PAGE";
 
 export const SETTING_PAGE = "SETTING_PAGE";
+
+export const THONGBAO_PAGE = "THONGBAO_PAGE";
+
+export const LICHHEN_PAGE = "LICHHEN_PAGE";
+
+export const CAUHOI_PAGE = "CAUHOI_PAGE";

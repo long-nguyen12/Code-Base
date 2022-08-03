@@ -1,3 +1,3 @@
-import SplashScreen from "expo-splash-screen";
+import * as SplashScreen from "expo-splash-screen";
 
 export default SplashScreen;
