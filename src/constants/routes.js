@@ -12,7 +12,15 @@ export const HOME_PAGE = "HOME_PAGE";
 export const SETTING_PAGE = "SETTING_PAGE";
 
 export const THONGBAO_PAGE = "THONGBAO_PAGE";
+export const THONGBAO_CANHAN = "THONGBAO_CANHAN";
+export const THONGBAO_CONGDONG = "THONGBAO_CONGDONG";
 
 export const LICHHEN_PAGE = "LICHHEN_PAGE";
 
 export const CAUHOI_PAGE = "CAUHOI_PAGE";
+
+export const BACSI_PAGE = "BACSI_PAGE";
+
+export const TINTUC_PAGE = "TINTUC_PAGE";
+
+export const HUONGDAN_PAGE = "HUONGDAN_PAGE";

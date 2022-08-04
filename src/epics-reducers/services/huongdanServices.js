@@ -27,7 +27,7 @@ export function getHuongdan(page, limit, params) {
 export function getHuongdanTrangchu() {
     const params = { trangchu: true };
     return axios
-        .get(`${COMMON_APP.HOST_API}${API.HUONGDAN_QUERY.format(0, 0, "")}`, {
+        .get(`${COMMON_APP.HOST_API}${API.HUONGDAN_QUERY}`, {
             params,
         })
         .then((res) => {

@@ -25,7 +25,7 @@ export function getTintucTrangchu() {
     const url = `${COMMON_APP.HOST_API}${API.TINTUC_QUERY}`;
     console.log(url);
     return axios
-        .get(`${COMMON_APP.HOST_API}${API.TINTUC_QUERY.format(0, 0, "")}`, {
+        .get(url, {
             params,
         })
         .then((res) => {

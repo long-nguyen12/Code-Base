@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { HELPER_LINK_TEXT, LABEL_TEXT } from "./constants/colors";
+import { HELPER_LINK_TEXT, LABEL_TEXT, PRIMARY } from "./constants/colors";
 
 export const containerStyles = StyleSheet.create({
     content: {
@@ -22,4 +22,7 @@ export const containerStyles = StyleSheet.create({
         width: 24,
         height: 24,
     },
+    textStyle: {
+        color: PRIMARY
+    }
 });

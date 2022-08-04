@@ -8,12 +8,13 @@ import { EvaIconsPack } from "@ui-kitten/eva-icons";
 import { Provider } from "react-redux";
 import configureAppStore from "./src/store";
 import { PersistGate } from "redux-persist/integration/react";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 const { store, persistor } = configureAppStore();
 
 export default function App() {
     return (
-        <View style={styles.container}>
+        <SafeAreaProvider style={styles.container}>
             <Provider store={store}>
                 <PersistGate loading={null} persistor={persistor}>
                     <IconRegistry icons={EvaIconsPack} />
@@ -26,7 +27,7 @@ export default function App() {
                     </ApplicationProvider>
                 </PersistGate>
             </Provider>
-        </View>
+        </SafeAreaProvider>
     );
 }
 
