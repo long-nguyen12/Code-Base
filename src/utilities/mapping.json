@@ -1,0 +1,75 @@
+{
+    "components": {
+        "Button": {
+            "meta": {
+                "appearances": {
+                    "outline": {
+                        "default": false
+                    }
+                }
+            },
+            "appearances": {
+                "filled": {
+                    "mapping": {},
+                    "variantGroups": {
+                        "status": {
+                            "primary": {
+                                "backgroundColor": "#2e78b7",
+                                "borderWidth": 0
+                            },
+                            "success": {
+                                "backgroundColor": "#32CD32",
+                                "borderWidth": 0
+                            },
+                            "danger": {
+                                "backgroundColor": "#ff0021",
+                                "borderWidth": 0
+                            },
+                            "basic": {
+                                "backgroundColor": "#1F4690",
+                                "borderWidth": 0,
+                                "textColor": "#fff"
+                            }
+                        }
+                    }
+                }
+            },
+            "Card": {
+                "meta": {
+                    "appearances": {
+                        "outline": {
+                            "default": false
+                        }
+                    }
+                },
+                "appearances": {
+                    "filled": {
+                        "mapping": {},
+                        "variantGroups": {
+                            "status": {
+                                "primary": {
+                                    "backgroundColor": "#1F4690",
+                                    "borderWidth": 0
+                                },
+                                "success": {
+                                    "backgroundColor": "#32CD32",
+                                    "borderWidth": 0,
+                                    "padding": 8
+                                },
+                                "danger": {
+                                    "backgroundColor": "#ff0021",
+                                    "borderWidth": 0,
+                                    "padding": 8
+                                },
+                                "basic": {
+                                    "backgroundColor": "#1F4690",
+                                    "borderWidth": 0
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
