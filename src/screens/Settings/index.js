@@ -42,7 +42,7 @@ export default function SettingsPage(props) {
                     />
                     {userInfoRes?._id ? (
                         <View style={[tw.flex1, tw.mX2]}>
-                            <Text category={"h5"} style={containerStyles.textStyle}>{userInfoRes?.full_name}</Text>
+                            <Text category={"h5"} style={containerStyles.textStyle}>{userInfoRes?.hoten}</Text>
                             <Text style={[tw.textBase, tw.textGray600]}>
                                 Thông tin cá nhân
                             </Text>
