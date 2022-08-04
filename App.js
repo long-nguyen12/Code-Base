@@ -9,8 +9,12 @@ import { Provider } from "react-redux";
 import configureAppStore from "./src/store";
 import { PersistGate } from "redux-persist/integration/react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import { extendFunction } from "./config/extendFunction";
+// import 'react-native-gesture-handler';
 
 const { store, persistor } = configureAppStore();
+
+extendFunction(store);
 
 export default function App() {
     return (

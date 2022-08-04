@@ -33,7 +33,11 @@ export default function LoginPage(props) {
     };
 
     async function onFormSubmit(values) {
-        dispatch(userLoginRoutine.trigger(values));
+        const data = {
+            taikhoan: values.username,
+            matkhau: values.password,
+        };
+        dispatch(userLoginRoutine.trigger(data));
     }
 
     return (

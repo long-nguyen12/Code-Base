@@ -3,6 +3,7 @@ import { COMMON_APP } from "../../constants/common";
 import { API } from "../../constants/api";
 
 export function userLogin(data) {
+    console.log(data);
     const url = `${COMMON_APP.HOST_API}${API.USER_DANGNHAP}`;
 
     return axios
