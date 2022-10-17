@@ -22,7 +22,7 @@ export const extendFunction = (store) => {
             //     );
 
             apiReq++;
-            let token = store.getState().auth.me.token;
+            let token = store.getState().auth.token;
             if (token) {
                 config.headers["Authorization"] = "Bearer " + token;
             }
