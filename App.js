@@ -25,7 +25,7 @@ export default function App() {
                     <ApplicationProvider
                         {...eva}
                         theme={{ ...eva.light, ...theme }}
-                        // customMapping={{ ...eva.mapping, ...mapping }}
+                        customMapping={{ mapping }}
                     >
                         <AppNavigator />
                     </ApplicationProvider>

@@ -7,6 +7,7 @@ import { userLogoutRoutine } from "../Login/saga/routines";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { tw } from "react-native-tailwindcss";
 import { containerStyles } from "../../stylesContainer";
+import { APP_AUTH, LOGIN_PAGE } from "../../constants/routes";
 
 export default function SettingsPage(props) {
     useLayoutEffect(() => {
@@ -22,10 +23,20 @@ export default function SettingsPage(props) {
     });
 
     const dispatch = useDispatch();
-    const userInfoRes = useSelector((state) => state.auth.me);
+    const userInfoRes = useSelector((state) => state.auth);
 
     function userLogout() {
         dispatch(userLogoutRoutine.trigger());
+    }
+
+    function preventBeforeLogin(route) {
+        if (userInfoRes._id) {
+            props.navigation.navigate(APP_AUTH, {
+                screen: LOGIN_PAGE,
+            });
+        } else {
+            props.navigation.navigate(LOGIN_PAGE);
+        }
     }
 
     return (
@@ -33,7 +44,7 @@ export default function SettingsPage(props) {
             <ScrollView contentContainerStyle={tw.pY4}>
                 <TouchableOpacity
                     style={[tw.flexRow, tw.p4, tw.itemsCenter]}
-                    onPress={() => this.preventBeforeLogin(CANHAN_PAGE)}
+                    onPress={() => preventBeforeLogin()}
                 >
                     <MaterialCommunityIcons
                         name="account-circle"
@@ -42,7 +53,12 @@ export default function SettingsPage(props) {
                     />
                     {userInfoRes?._id ? (
                         <View style={[tw.flex1, tw.mX2]}>
-                            <Text category={"h5"} style={containerStyles.textStyle}>{userInfoRes?.hoten}</Text>
+                            <Text
+                                category={"h5"}
+                                style={containerStyles.textStyle}
+                            >
+                                {userInfoRes?.hoten}
+                            </Text>
                             <Text style={[tw.textBase, tw.textGray600]}>
                                 Thông tin cá nhân
                             </Text>

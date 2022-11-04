@@ -21,9 +21,9 @@ export default function AppNavigator() {
                     ...TransitionPresets.SlideFromRightIOS,
                 }}
             >
-                <Stack.Screen name={APP_LOADER} component={AppLoaderScreen} />
-                <Stack.Screen name={APP_AUTH} component={AuthNavigator} />
+                {/* <Stack.Screen name={APP_LOADER} component={AppLoaderScreen} /> */}
                 <Stack.Screen name={APP_MAIN} component={RootNavigator} />
+                <Stack.Screen name={APP_AUTH} component={AuthNavigator} />
             </Stack.Navigator>
         </NavigationContainer>
     );
